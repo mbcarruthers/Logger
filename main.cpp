@@ -1,5 +1,6 @@
 
 #include "FileLogger.hpp"
+#include "ConsoleLogger.hpp"
 
 Logger& get_logger()
 {
@@ -13,7 +14,18 @@ void do_something()
     get_logger().log_message("Entered the do_something() function");
 }
 
-int main()
+ConsoleLogger get_console() {
+    static ConsoleLogger con;
+    return con;
+}
+
+void do_console() {
+    get_console().log_message("Entered the do_console() function");
+}
+int main( void )
 {
     do_something();
+    do_console();
+
+    return 0;
 }
