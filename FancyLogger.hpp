@@ -14,6 +14,8 @@ public:
     virtual void log_info( std::string const& message ) = 0;
     virtual void log_warning( std::string const& message ) = 0;
     virtual void log_error( std::string const& message ) = 0;
+
+    virtual ~FancyLogger() = default;
 };
 
 
